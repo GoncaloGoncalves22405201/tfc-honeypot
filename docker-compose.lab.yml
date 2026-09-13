@@ -1,0 +1,14 @@
+services:
+  ssh-referencia:
+    build: ./lab-ssh-ref
+    container_name: tfc-ssh-referencia
+    hostname: srv-fileserver-lisboa
+    ports:
+      - "2222:22"
+    networks:
+      - lab
+    restart: unless-stopped
+
+networks:
+  lab:
+    driver: bridge
